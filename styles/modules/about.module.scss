@@ -1,0 +1,138 @@
+@import '../components/general';
+
+#about {
+  padding: 50px 0px;
+
+  body:global(.toggle) & {
+    @apply border border-red-600;
+  }
+
+  & > div {
+    body:global(.toggle) & {
+      @apply border border-blue-600;
+    }
+  }
+
+  & > div:first-child {
+    @apply sm:pl-5 sm:pr-20;
+    &::before {
+      content: '';
+      @apply block h-24 w-80 my-0 mx-auto;
+      @apply sm:h-20 sm:w-full sm:m-0;
+      background: $color-green;
+    }
+  }
+
+  & > div:nth-child(2) {
+    @apply h-screen w-full flex justify-center items-center text-center;
+    @apply xl:py-0 xl:px-12;
+    @apply sm:p-5 sm:pt-10 sm:text-left sm:h-auto;
+
+    p {
+      font-family: 'Adobe Jenson Pro';
+      @apply max-w-6xl text-font-lg;
+      @apply xl:max-w-none xl:text-font-md;
+    }
+  }
+
+  .clients {
+    @apply max-w-6xl my-0 mx-auto;
+    @apply xl:pb-0 xl:px-10;
+    @apply sm:pb-0 sm:px-5 sm:m-0;
+
+    span {
+      @apply block text-center pt-10 pb-2.5 text-font-md;
+      @apply sm:pb-5 sm:text-left sm:text-font-sm;
+      font-family: 'Adobe Jenson Pro';
+    }
+
+    & > div:last-child {
+      @apply my-0 mx-28 pb-10 grid gap-7 grid-cols-4 flex-row	flex-wrap;
+      @apply md:grid-cols-2 md:m-0 md:pb-5;
+
+      & > div {
+        @apply relative	w-full;
+        height: 25vh;
+        min-height: 250px;
+      }
+
+      body:global(.toggle) & {
+        @apply border border-red-600;
+      }
+    }
+  }
+
+  .press {
+    @apply max-w-6xl my-0 mx-auto;
+    @apply xl:pb-0 xl:px-10;
+    @apply sm:pb-0 sm:px-5 sm:m-0;
+
+    span {
+      @apply block text-center pt-10 pb-2.5 text-font-md;
+      @apply sm:pb-5 sm:text-left sm:text-font-sm;
+      font-family: 'Adobe Jenson Pro';
+    }
+
+    & > div:last-child {
+      @apply flex flex-col items-center pb-10;
+      @apply sm:pb-5 sm:items-start;
+
+      body:global(.toggle) & {
+        @apply border border-red-600;
+      }
+
+      a {
+        @apply pt-2.5 text-font-link;
+        @apply sm:pt-5 sm:opacity-75 sm:hover:opacity-100 sm:hover:transition sm:hover:duration-500;
+        color: theme('colors.black');
+
+        &:not(a:first-child) {
+          @apply pt-5;
+        }
+      }
+    }
+  }
+
+  .contact {
+    @apply max-w-6xl my-0 mx-auto;
+    @apply xl:pb-0 xl:px-10;
+    @apply sm:pb-0 sm:px-5 sm:m-0;
+
+    span {
+      @apply block text-center pt-10 pb-2.5 text-font-md;
+      @apply sm:pb-5 sm:text-left sm:text-font-sm;
+      font-family: 'Adobe Jenson Pro';
+    }
+
+    & > div:last-child {
+      @apply flex flex-col items-center pb-10;
+      @apply sm:pb-5 sm:items-start;
+
+      body:global(.toggle) & {
+        @apply border border-red-600;
+      }
+
+      a {
+        @apply pt-2.5 text-font-link;
+        @apply sm:pt-5 sm:opacity-75 sm:hover:opacity-100 sm:hover:transition sm:hover:duration-500;
+        color: theme('colors.black');
+
+        &:not(a:first-child) {
+          @apply pt-5;
+        }
+      }
+    }
+  }
+
+  .footer {
+    @apply max-w-6xl my-0 mx-auto;
+    @apply xl:pb-0 xl:px-10;
+    @apply sm:pb-0 sm:px-5 sm:m-0;
+
+    span {
+      @apply block text-center pt-10 pb-2.5 text-font-xxs;
+      @apply sm:pt-5 sm:text-left;
+      font-family: 'Acumin Pro';
+    }
+  }
+}

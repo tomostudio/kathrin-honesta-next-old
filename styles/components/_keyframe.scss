@@ -1,0 +1,45 @@
+@keyframes scrollUpDown {
+    0%,
+    10% {
+        transform: translate(0, -15px);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(0, 0px);
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    90%,
+    100% {
+        opacity: 0;
+        transform: translate(0, 15px);
+    }
+}
+
+@keyframes scrollEnd {
+    0% {
+        transform: translate(0, 20px);
+    }
+
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+@keyframes scrollEndMobile {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}

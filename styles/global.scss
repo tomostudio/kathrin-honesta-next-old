@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'components/general';
+@import 'components/font';
+@import 'components/cursor';
+// @import "components/keyframe";
+@import 'components/navScroll';
+
+* {
+  @apply box-border; 
+  box-sizing: border-box;
+  font-family: 'Acumin Pro';
+  cursor: none !important;
+
+  &::-webkit-scrollbar {
+    @apply hidden;
+  }
+}
+
+#container {
+  @apply bg-white;
+}
+
+body {
+  @apply bg-white;
+}
+
+// LOCOMOTIVE STYLE
+html.has-scroll-smooth {
+  @apply overflow-hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  @apply overflow-hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  @apply min-h-screen;
+}
+
+a {
+  @apply no-underline;
+}
+
+// main {
+//   position: relative;
+// }

@@ -1,0 +1,30 @@
+@import '../components/general';
+
+.navigation {
+  @apply fixed top-0 left-0 right-0 flex flex-row justify-between py-0 px-5 opacity-25 transition duration-300 pointer-events-none text-font-xxxs;
+  z-index: 2;
+  background: rgba(255, 226, 192, 0.25);
+
+  & > div {
+    @apply py-1.5 px-0;
+
+    button {
+      @apply pointer-events-auto;
+
+      &:hover {
+        color: theme('colors.blue.500');
+      }
+    }
+
+    a {
+      @apply pointer-events-auto my-0 mx-1.5;
+      &:hover {
+        color: theme('colors.blue.500');
+      }
+    }
+  }
+
+  &:hover {
+    @apply opacity-100;
+  }
+}

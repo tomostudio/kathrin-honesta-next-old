@@ -1,0 +1,48 @@
+.custom_cursor {
+  @apply absolute opacity-0 transition duration-500 mix-blend-difference;
+  z-index: 10000;
+
+  .circle {
+    @apply fixed w-8 h-8 border-2 border-white rounded-full pointer-events-none;
+    transform: translate(-50%, -50%);
+    -webkit-transition-duration: 100ms;
+    transition-duration: 100ms;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    will-change: width, height, transform, border;
+    z-index: 9;
+  }
+
+  .cursor {
+    @apply fixed w-4 h-4 pointer-events-none;
+    z-index: 10;
+
+    svg {
+      @apply h-full w-full;
+
+      path {
+        fill: white;
+      }
+    }
+  }
+
+  .circle.hovered {
+    @apply w-10 h-10;
+  }
+
+  .circle.click {
+    @apply bg-white;
+  }
+
+  .cursor.click {
+    svg {
+      path {
+        fill: black;
+      }
+    }
+  }
+}
+
+.active {
+  @apply opacity-100;
+}

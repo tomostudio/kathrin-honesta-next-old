@@ -1,0 +1,39 @@
+// COLOR
+$color-green: #B8E986;
+$color-grey: #D8D8D8;
+$color-black: #000;
+
+// RESPONSIVE
+$breakpoints: (
+  "sm": (
+    max-width: 576px,
+  ),
+  "md": (
+    max-width: 768px,
+  ),
+  "lg": (
+    max-width: 992px,
+  ),
+  "xl": (
+    max-width: 1200px,
+  ),
+  "xxl": (
+    max-width: 1400px,
+  ),
+);
+
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media only screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

@@ -1,0 +1,121 @@
+.navScroll {
+  @apply fixed pointer-events-none top-0 bottom-0 left-0 right-0 w-full h-full flex flex-col justify-between;
+  z-index: 9;
+
+  & > div {
+    @apply w-full flex justify-center h-12 items-center relative text-font-xxs;
+
+    .toggle & {
+      @apply border-2 border-blue-600;
+    }
+
+    a {
+      @apply pointer-events-auto;
+      color: theme('colors.black');
+    }
+
+    button {
+      @apply pointer-events-auto;
+    }
+  }
+
+  .scrollTopAbout {
+    @apply justify-start #{!important};
+  }
+
+  .top {
+    @include respond-to('sm') {
+      @apply justify-end relative;
+
+      &::before {
+        content: '';
+        @apply block absolute w-full;
+        z-index: -1;
+        height: 15vh;
+        background: linear-gradient(
+          180deg,
+          hsla(0, 0%, 100%, 0.85),
+          hsla(0, 0%, 100%, 0)
+        );
+      }
+
+      a {
+        @apply py-0 px-5;
+      }
+    }
+  }
+
+  .bottom {
+    & > div {
+      @apply absolute;
+    }
+
+    & > div:first-child {
+      animation: scrollUpDown 2s linear infinite forwards;
+      @apply sm:opacity-0;
+    }
+
+    .detail {
+      @apply max-w-6xl flex justify-between w-full py-0 px-14;
+      @apply sm:pt-0 sm:pb-0 sm:px-5 #{!important};
+      //   padding: 0 60px;
+
+      & > div {
+        @apply sm:hidden;
+      }
+    }
+
+    & > div:last-child {
+      @apply opacity-0 transition duration-500;
+      @apply sm:pb-14;
+
+      button {
+        @apply pointer-events-none;
+      }
+    }
+
+    @include respond-to('sm') {
+      @apply justify-start relative;
+
+      & > div {
+        @apply pl-5;
+      }
+
+      &::before {
+        content: '';
+        @apply block absolute w-full;
+        z-index: -1;
+        height: 15vh;
+        background: linear-gradient(
+          0deg,
+          hsla(0, 0%, 100%, 0.85),
+          hsla(0, 0%, 100%, 0)
+        );
+      }
+    }
+  }
+
+  .scrollEndAbout {
+    animation: scrollEndMobile 0.3s linear;
+  }
+
+  .scrollEnd {
+    & > div:first-child {
+      @apply hidden;
+    }
+
+    & > div:last-child {
+      @apply opacity-100 #{!important};
+      @apply transition duration-500;
+      animation: scrollEnd 0.5s linear !important;
+
+      button {
+        @apply pointer-events-auto;
+      }
+
+      @include respond-to('sm') {
+        animation: scrollEndMobile 0.3s linear;
+      }
+    }
+  }
+}
