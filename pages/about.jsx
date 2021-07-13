@@ -23,7 +23,7 @@ const AboutPage = ({ about, seo }) => {
   const contentRef = useRef(new Array())
 
   return (
-    <MainLayout pageTitle="Home">
+    <MainLayout pageTitle="About">
       <NavScroll topTitle="Close" topLink="" />
       <SEO
         seo={{
@@ -33,8 +33,8 @@ const AboutPage = ({ about, seo }) => {
           description: seo[0].seo.seo_description
             ? seo[0].seo.seo_description
             : '',
-          image: seo[0].seo.seo_image ? urlFor(seo[0].seo.seo_image).url() : '', // di isi default ato yang custom sesuai halaman. 404, index sama about itu default
-          image_alt: seo[0].seo.seo_image.name ? seo[0].seo.seo_image.name : '', // di isi default ato yang custom sesuai halaman.  404, index sama about itu default
+          image: seo[0].seo.seo_image ? urlFor(seo[0].seo.seo_image).url() : '', 
+          image_alt: seo[0].seo.seo_image.name ? seo[0].seo.seo_image.name : '', 
         }}
       />
       <SmoothScrollProvider content={contentRef} type="all">

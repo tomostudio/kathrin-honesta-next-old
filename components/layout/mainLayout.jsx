@@ -55,7 +55,6 @@ const MainLayout = ({ pageTitle, children }) => {
       >
         <Head>
           <meta charSet="utf-8" />
-          <title>{PageTitle}</title>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1,viewport-fit=cover"
